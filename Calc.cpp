@@ -18,10 +18,10 @@ private:
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 int main() {
-	cin.ios_base::sync_with_stdio(false); // 출력 속도 늘리기
-	cin.tie(NULL); // 출력 속도 늘리기
-	Calc *T = new Calc; // 계산기 클래슷 생성
-	string s; // 입력 받을 스트링 객체
+	cin.ios_base::sync_with_stdio(false); // 출력 속도 향상
+	cin.tie(NULL); // 출력 속도 향상
+	Calc *T = new Calc; // 계산기 클래스 생성
+	string s; // 사용자 입력을 저장할 스트링 객체
 
 
 	cout << "Want to exit: Y\n";
@@ -44,7 +44,6 @@ Calc::Calc() :
 
 //후위수식으로 바꿔줌
 void Calc::postfix(string s) {
-	int count = 0;
 	int flag=0; // 소수점 플래그(정수 15와 소수 1.5의 저장 방식이 다름)
 	double buf=0; // 연산자를 만나기 전까지 스트링으로 된 숫자를 숫자 데이터로 바꾸기 위한 임시 버퍼
 	Stack oper; // 후위 수식으로 바꾸기 위해 사용되는 연산자 스택
@@ -118,7 +117,7 @@ double Calc::calculate(string s) {
 	postfix(s);
 	Stack k,buf;
 	double m, n, p;
-	int flag = 0;
+	int flag = 0; // error flag
 
 
 	for (int i = 0; post->size(); i++)
